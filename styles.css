@@ -322,3 +322,21 @@ header .icons span:last-child {
   margin-bottom: 150px;
   text-align: center;
 }
+
+
+
+
+/* Donate Page */
+
+
+
+#logo-donate {
+  height: 200px;
+  border-radius: 50px;
+}
+
+#logos-div {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
