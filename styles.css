@@ -283,3 +283,8 @@ header .icons span:last-child {
   justify-content: center;
   align-items: center;
 }
+
+.director-container {
+  padding: 20px;
+  margin-top: 50px;
+}
