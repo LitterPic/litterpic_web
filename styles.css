@@ -264,21 +264,8 @@ header .icons span:last-child {
   text-align: center;
   font-size: 100px;
   margin-top: 80px;
-  color: darkgreen;
-  animation: color-change 2s infinite;
 }
 
-@keyframes color-change {
-  0% {
-    color: darkgreen;
-  }
-  50% {
-    color: black;
-  }
-  100% {
-    color: darkgreen;
-  }
-}
 
 #about-ms {
   text-align: center;
@@ -290,20 +277,6 @@ header .icons span:last-child {
   text-align: center;
   margin-top: 100px;
   font-size: 50px;
-  color: darkgreen;
-  animation: color-change 2s infinite;
-}
-
-@keyframes color-change {
-  0% {
-    color: darkgreen;
-  }
-  50% {
-    color: black;
-  }
-  100% {
-    color: darkgreen;
-  }
 }
 
 
@@ -339,4 +312,21 @@ header .icons span:last-child {
   display: flex;
   justify-content: center;
   margin: 100px;
+}
+
+.donate-btn {
+  background-color: black;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    background-color: black;
+  }
 }
