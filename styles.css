@@ -45,7 +45,7 @@ body {
 
 .navbar-brand {
   color: #ffffff;
-  background-color: rgb(10, 95, 26);
+  background-color: darkgreen;
   padding: 5px 10px;
 }
 
@@ -264,6 +264,20 @@ header .icons span:last-child {
   text-align: center;
   font-size: 100px;
   margin-top: 80px;
+  text-color: darkgreen;
+  animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: darkgreen;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: darkgreen;
+  }
 }
 
 #about-ms {
@@ -276,7 +290,25 @@ header .icons span:last-child {
   text-align: center;
   margin-top: 100px;
   font-size: 50px;
+  color: darkgreen;
+  animation: color-change 2s infinite;
 }
+
+@keyframes color-change {
+  0% {
+    color: darkgreen;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: darkgreen;
+  }
+}
+
+
+
+
 
 #director-info {
   display: flex;
