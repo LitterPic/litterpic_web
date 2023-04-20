@@ -317,7 +317,14 @@ header .icons span:last-child {
 
 .donate-btn {
   background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
 }
+
 
 .donate-btn:hover {
   background-color: #005F40;
