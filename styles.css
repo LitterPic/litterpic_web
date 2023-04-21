@@ -333,7 +333,8 @@ header .icons span:last-child {
 #donate-paragraph {
   padding: 150px;
   text-align: center;
-  margin-top: -50px;
+  margin-top: -200px;
+  padding-bottom: 50px;;
 }
 
 #d-btn-2 {
