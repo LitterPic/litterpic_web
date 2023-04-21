@@ -320,6 +320,9 @@ header .icons span:last-child {
   border-radius: 20px;
 }
 
+#seal, #tax-exempt {
+  margin-left: 20px;
+}
 
 
 .donate-btn {
