@@ -315,6 +315,16 @@ header .icons span:last-child {
   margin: 100px;
 }
 
+#seals-div img {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#seal, #tax-exempt {
+  height: 100px;
+}
+
+
 .donate-btn {
   background-color: grey;
   display: flex;
@@ -334,7 +344,7 @@ header .icons span:last-child {
   padding: 150px;
   text-align: center;
   margin-top: -200px;
-  padding-bottom: 50px;;
+  padding-bottom: 50px;
 }
 
 #d-btn-2 {
