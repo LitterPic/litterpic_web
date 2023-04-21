@@ -340,6 +340,10 @@ header .icons span:last-child {
   margin-bottom: 100px;
 }
 
+.button-style {
+  text-decoration: none;
+}
+
 #closing-statement, #closing-statement-two {
   text-align: center;
   margin-bottom: 30px;
