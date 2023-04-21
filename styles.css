@@ -303,25 +303,25 @@ header .icons span:last-child {
 /* Donate Page */
 
 
-
-#logo-donate {
-  height: 200px;
-  border-radius: 50px;
-}
-
-#logos-div {
+.centered-logos {
   display: flex;
   justify-content: center;
-  margin: 100px;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-#seals-div img {
-  display: block;
-  margin-bottom: 10px;
+.centered-logos img {
+  max-width: 100%;
+  height: auto;
+}
+
+#logo-donate {
+  border-radius: 20px;
 }
 
 #seal, #tax-exempt {
-  height: 100px;
+  margin-left: 20px;
 }
 
 
