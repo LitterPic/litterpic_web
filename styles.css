@@ -338,6 +338,7 @@ header .icons span:last-child {
 
 .donate-btn:hover {
   background-color: #005F40;
+  color: white;
 }
 
 #donate-paragraph {
