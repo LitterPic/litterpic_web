@@ -71,6 +71,10 @@ body {
   margin-right: 5px;
 }
 
+#litter-icon {
+  height: 30px;
+}
+
 /* Donate Button */
 #wrapper {
   display: flex;

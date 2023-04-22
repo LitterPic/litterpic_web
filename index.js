@@ -54,3 +54,29 @@ prevNextIcon.forEach(icon => {
     renderCalendar();
   });
 });
+
+// const renderCalendar = () => {
+//   // ...
+
+//   // Retrieve events data from Firebase
+//   firebase.database().ref('events').on('value', snapshot => {
+//     const events = snapshot.val();
+
+//     // Loop through events data and add it to the appropriate day
+//     for (let key in events) {
+//       const event = events[key];
+
+//       // Get the day of the event
+//       const eventDate = new Date(event.date);
+//       const eventDay = eventDate.getDate();
+
+//       // Check if the event day is in the current month and year
+//       if (eventDate.getFullYear() === currYear && eventDate.getMonth() === currMonth) {
+//         // Get the corresponding day element and add the event to it
+//         const dayElement = daysTag.querySelector(`li:not(.inactive):nth-child(${eventDay + firstDayofMonth})`);
+//         if (dayElement) {
+//           dayElement.innerHTML += `<span class="event">${event.title}</span>`;
+//         }
+//       }
+//     }
+//   });
