@@ -183,6 +183,10 @@ h3,h4,h5 {
   background-size: cover;
 }
 
+.move-icons {
+  color: white;
+}
+
 .calendar-content {
   background-color: #fff;
   padding: 20px;
