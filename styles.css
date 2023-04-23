@@ -77,6 +77,18 @@ body {
   height: 30px;
 }
 
+.social-bg {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+.social-icons {
+  color: #26a69a;
+}
+
+
+
 /* Donate Button */
 #wrapper {
   display: flex;
