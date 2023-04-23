@@ -175,7 +175,7 @@ h3,h4,h5 {
 }
 
 .header-background {
-  background-image: url("https://raw.githubusercontent.com/JustMonk/codepen-resource-project/master/img/compressed-header.jpg");
+  background-image: url("https://www.openaccessgovernment.org/wp-content/uploads/2018/11/dreamstime_s_74844293.jpg");
   height: 200px;
   background-position: center right;
   background-size: cover;
@@ -204,7 +204,7 @@ h3,h4,h5 {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   text-align: center;
-  background-color: #4b6289 !important;
+  background-color: #FF7F50 !important;
   position: relative;
   overflow: hidden;
 }
@@ -257,7 +257,7 @@ h3,h4,h5 {
 
 .sidebar-wrapper {
   color: #fff;
-  background-color: #5a649c !important;
+  background-color: #005F40 !important;
   padding-top: 0;
   padding-bottom: 20px;
   font-family: 'Roboto', sans-serif;
@@ -421,7 +421,7 @@ h3,h4,h5 {
   position: fixed;
   z-index: 99;
   width: 100%;
-  background-color: #5a649c !important;
+  background-color: #005F40 !important;
 }
 
 .mobile-header a i {
@@ -457,7 +457,7 @@ h3,h4,h5 {
      background-color: #EEEEEE !important;
   }
   .sidebar-title {
-     background-color: #5A649C !important;
+     background-color: #005F40 !important;
   }
   .empty-message {
      color: black;
