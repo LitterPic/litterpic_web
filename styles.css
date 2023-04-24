@@ -6,6 +6,29 @@ body {
 
 /* Home Page */
 
+#news-feed-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.img-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+#status {
+  width: 300px;
+  height: 100px;
+}
 
 
 
