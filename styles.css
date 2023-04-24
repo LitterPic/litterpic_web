@@ -41,6 +41,8 @@ body {
 /* Navbar styles */
 .navbar {
   background-color: darkgreen;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar-brand {
@@ -74,6 +76,18 @@ body {
 #litter-icon {
   height: 30px;
 }
+
+.social-bg {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+.social-icons {
+  color: #26a69a;
+}
+
+
 
 /* Donate Button */
 #wrapper {
@@ -181,6 +195,10 @@ h3,h4,h5 {
   background-size: cover;
 }
 
+.move-icons {
+  color: white;
+}
+
 .calendar-content {
   background-color: #fff;
   padding: 20px;
@@ -264,6 +282,7 @@ h3,h4,h5 {
   font-weight: 300;
   padding-left: 0;
   padding-right: 0;
+  z-index: -3 !important;
 }
 
 .sidebar-title {
@@ -271,7 +290,7 @@ h3,h4,h5 {
 }
 
 .sidebar-title h4 {
-  margin-top: 0;
+  margin-top: 50px;
 }
 
 .sidebar-events {
@@ -567,6 +586,7 @@ h3,h4,h5 {
 
 .donate-btn {
   background-color: grey;
+  color: #005F40;
   display: flex;
   justify-content: center;
   align-items: center;
