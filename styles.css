@@ -25,10 +25,27 @@ body {
   margin-bottom: 20px;
 }
 
-#status {
-  width: 300px;
-  height: 100px;
+#stat-icon {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Align items vertically */
 }
+
+#status {
+  display: inline-block;
+  width: 80%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  outline: none;"
+}
+
+.photo-icon {
+  display: inline-block;
+  margin-left: 10px; /* Add some spacing between the textarea and the icon */
+}
+
 
 
 /* Navbar styles */
