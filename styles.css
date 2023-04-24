@@ -23,6 +23,7 @@ body {
 #user-img {
   height: 100px;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 #stat-icon {
@@ -30,13 +31,25 @@ body {
   align-items: center; /* Align items vertically */
 }
 
+#news-feed-post {
+  position: relative;
+  width: 30%;
+  height: 20%;
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
 #status {
   display: inline-block;
   width: 80%;
   padding: 10px;
+  margin-bottom: 20px;
   font-size: 1.2rem;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
   outline: none;
 }
