@@ -268,3 +268,13 @@ const container = document.querySelector(".container"),
       arrowBack.addEventListener("click", () => {
         container.classList.remove("active");
       });
+
+
+
+// Like Button
+
+function toggleHeart() {
+   const heartBtn = document.getElementById("heart-btn");
+   heartBtn.classList.toggle("fa-regular");
+   heartBtn.classList.toggle("fa-solid");
+}

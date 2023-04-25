@@ -36,6 +36,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js" defer></script>
   </head>
@@ -67,7 +68,11 @@
       </div>
       <div id="img-post"></div>
       <div id="interact">
-        <i class="interact-btns fa-regular fa-heart fa-2x"></i>
+        <i
+          id="heart-btn"
+          class="interact-btns fa-regular fa-heart fa-2x"
+          onclick="toggleHeart()"
+        ></i>
         <i class="interact-btns fa-regular fa-comments fa-2x"></i>
         <i id="like-count">20 Likes</i>
       </div>
