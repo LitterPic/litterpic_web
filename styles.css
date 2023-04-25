@@ -30,7 +30,7 @@ body {
   height: 50px;
   margin-bottom: 20px;
   margin-top: 10px;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 
@@ -38,7 +38,7 @@ body {
 #img-post {
   background-color: grey;
   height: 350px;
-  width: 300px;
+  width: 380px;
   border-radius: 10px;
   margin: auto;
   position: relative;
@@ -91,11 +91,11 @@ body {
 
 #username {
   font-weight: bold;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 #user-post {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 
