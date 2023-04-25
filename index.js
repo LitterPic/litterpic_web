@@ -278,3 +278,7 @@ function toggleHeart() {
    heartBtn.classList.toggle("fa-regular");
    heartBtn.classList.toggle("fa-solid");
 }
+
+function toggleHeart(heartIcon) {
+   heartIcon.classList.toggle('fa-solid');
+ }
