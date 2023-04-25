@@ -96,6 +96,13 @@ body {
   padding-left: 15px;
 }
 
+#location {
+  color: #015e41;
+  font-weight: bold;
+  padding-left: 15px;
+
+}
+
 #user-post {
   padding-left: 15px;
 }
