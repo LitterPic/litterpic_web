@@ -115,8 +115,8 @@ body {
   margin-right: 15px; 
 }
 
-#like-count {
-  padding-left: 220px;
+.interact-count {
+  padding-left: 50px;
 }
 
 
