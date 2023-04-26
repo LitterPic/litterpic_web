@@ -611,9 +611,9 @@ h3,h4,h5 {
 }
 
 
-#about-ms {
+.main-page-text {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   font-size: 20px;
 }
 
@@ -716,3 +716,15 @@ h3,h4,h5 {
 
 
 /* footer stuff */
+
+.copyright-footer {
+  color: black;
+}
+
+.email-footer {
+  color: darkgreen;
+}
+
+.number-footer {
+  color: black;
+}
