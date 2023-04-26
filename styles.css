@@ -140,7 +140,7 @@ body {
 
 /* Navbar styles */
 .navbar {
-  background-color: darkgreen;
+  background-color: white;
   position: relative;
   z-index: 2;
 }
@@ -151,16 +151,12 @@ body {
   padding: 5px 10px;
 }
 
-.navbar-brand {
-  color: #ffffff !important;
-}
-
 .nav-item {
   margin-right: 15px;
 }
 
 .nav-link {
-  color: #fff;
+  color: black;
   font-weight: 600;
 }
 
