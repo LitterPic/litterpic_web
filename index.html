@@ -36,6 +36,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="index.js" defer></script>
   </head>
@@ -43,7 +44,7 @@
   <body>
     <div id="navbar"></div>
 
-    <div id="news-feed-post">
+    <div id="news-feed-post" class="shadow p-3 mb-5 bg-body-tertiary rounded">
       <div class="img-status">
         <img id="user-img" src="profile.png" alt="user image" />
         <div id="stat-icon">
@@ -58,13 +59,24 @@
       </div>
     </div>
 
-    <div id="timeline">
+    <div id="timeline" class="shadow p-3 mb-5 bg-body-tertiary rounded">
       <div>
         <img id="user-img-2" src="profile.png" alt="user image" />
         <h6 id="username">Username</h6>
+        <h6 id="location">New York, NY</h6>
         <p id="user-post">Post text should go here</p>
       </div>
       <div id="img-post"></div>
+      <div id="interact">
+        <i
+          id="heart-btn"
+          class="interact-btns fa-regular fa-heart fa-2x"
+          onclick="toggleHeart(this)"
+        ></i>
+        <i class="interact-btns fa-regular fa-comments fa-2x"></i>
+        <i class="interact-count">20 Likes</i>
+        <i class="interact-count">5 Comments</i>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

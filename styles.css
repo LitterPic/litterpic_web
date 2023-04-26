@@ -30,7 +30,7 @@ body {
   height: 50px;
   margin-bottom: 20px;
   margin-top: 10px;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 
@@ -38,11 +38,11 @@ body {
 #img-post {
   background-color: grey;
   height: 350px;
-  width: 300px;
+  width: 380px;
   border-radius: 10px;
   margin: auto;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 #stat-icon {
@@ -87,16 +87,54 @@ body {
   border: 2px solid #ccc;
   border-radius: 10px;
   margin-top: 50px;
+  margin-bottom: 40px;
+  padding-bottom: 5px;
 }
 
 #username {
   font-weight: bold;
-  padding-left: 5px;
+  padding-left: 15px;
+}
+
+#location {
+  color: #015e41;
+  font-weight: bold;
+  padding-left: 15px;
+
 }
 
 #user-post {
-  padding-left: 5px;
+  padding-left: 15px;
 }
+
+#interact {
+  padding-left: 15px;
+}
+
+.interact-btns {
+  margin-right: 15px; 
+}
+
+.interact-count {
+  padding-left: 50px;
+}
+
+.fa-regular {
+  cursor: pointer;
+}
+
+.fa-solid {
+  color: #015e41;
+  cursor: pointer;
+  animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
 
 
 
