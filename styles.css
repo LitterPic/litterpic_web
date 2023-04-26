@@ -201,24 +201,6 @@ body {
   height: calc(100vh - 70px);
 }
 
-a.button {
-  background: #015e41 url(https://donorbox.org/images/red_logo.png) no-repeat
-    37px;
-  color: #fff;
-  text-decoration: none;
-  font-family: Verdana, sans-serif;
-  display: inline-block;
-  font-size: 16px;
-  padding: 15px 38px;
-  padding-left: 75px;
-  border-radius: 2px;
-  box-shadow: 0 1px 0 0 #1f5a89;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 #earth-container {
   display: flex;
   justify-content: center;
@@ -689,8 +671,8 @@ h3,h4,h5 {
 
 
 .donate-btn {
-  background-color: grey;
-  color: #005F40;
+  background-color: darkgreen;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -699,10 +681,18 @@ h3,h4,h5 {
   margin: 0 auto;
 }
 
+.donate-icon {
+  color: darkgreen;
+}
+
+.donate-icon-2 {
+  color: white;
+}
+
 
 .donate-btn:hover {
-  background-color: #005F40;
-  color: white;
+  background-color: white;
+  color: darkgreen;
 }
 
 #donate-paragraph {
@@ -724,3 +714,7 @@ h3,h4,h5 {
   text-align: center;
   margin-bottom: 30px;
 }
+
+
+
+/* footer stuff */
