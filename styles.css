@@ -124,7 +124,7 @@ body {
 }
 
 .fa-solid {
-  color: darkgreen;
+  color: red;
   cursor: pointer;
   animation: pulse 1s ease;
 }
