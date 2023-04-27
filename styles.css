@@ -722,3 +722,16 @@ h3,h4,h5 {
 .number-footer {
   color: black;
 }
+
+ul {
+  list-style-position: outside;
+}
+
+.list {
+  font-weight: bold;
+}
+
+.list-main {
+  font-weight: bold;
+  color: darkgreen;
+}
