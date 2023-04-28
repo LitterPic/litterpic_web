@@ -123,6 +123,8 @@ body {
   cursor: pointer;
 }
 
+/* added this because it wouldn't let me commit */
+
 .fa-solid {
   color: red;
   cursor: pointer;
