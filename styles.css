@@ -123,8 +123,10 @@ body {
   cursor: pointer;
 }
 
+/* added this because it wouldn't let me commit */
+
 .fa-solid {
-  color: #015e41;
+  color: red;
   cursor: pointer;
   animation: pulse 1s ease;
 }
@@ -140,19 +142,13 @@ body {
 
 /* Navbar styles */
 .navbar {
-  background-color: darkgreen;
+  background-color: white;
   position: relative;
   z-index: 2;
 }
 
 .navbar-brand {
-  color: #ffffff;
-  background-color: darkgreen;
   padding: 5px 10px;
-}
-
-.navbar-brand {
-  color: #ffffff !important;
 }
 
 .nav-item {
@@ -160,12 +156,12 @@ body {
 }
 
 .nav-link {
-  color: #fff;
+  color: black;
   font-weight: 600;
 }
 
 .nav-link:hover {
-  color: #ccc;
+  color: darkgreen;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -174,7 +170,11 @@ body {
 }
 
 #litter-icon {
-  height: 30px;
+  height: 45px;
+}
+
+.navbar-brand {
+  padding: 0;
 }
 
 .social-bg {
@@ -195,24 +195,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   height: calc(100vh - 70px);
-}
-
-a.button {
-  background: #015e41 url(https://donorbox.org/images/red_logo.png) no-repeat
-    37px;
-  color: #fff;
-  text-decoration: none;
-  font-family: Verdana, sans-serif;
-  display: inline-block;
-  font-size: 16px;
-  padding: 15px 38px;
-  padding-left: 75px;
-  border-radius: 2px;
-  box-shadow: 0 1px 0 0 #1f5a89;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 #earth-container {
@@ -476,8 +458,6 @@ h3,h4,h5 {
   border: 1px solid transparent;
 }
 
-#table-body {}
-
 #table-body .row {
   margin-bottom: 0;
 }
@@ -627,9 +607,9 @@ h3,h4,h5 {
 }
 
 
-#about-ms {
+.main-page-text {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
   font-size: 20px;
 }
 
@@ -685,8 +665,8 @@ h3,h4,h5 {
 
 
 .donate-btn {
-  background-color: grey;
-  color: #005F40;
+  background-color: darkgreen;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -695,10 +675,18 @@ h3,h4,h5 {
   margin: 0 auto;
 }
 
+.donate-icon {
+  color: darkgreen;
+}
+
+.donate-icon-2 {
+  color: white;
+}
+
 
 .donate-btn:hover {
-  background-color: #005F40;
-  color: white;
+  background-color: black;
+  color: darkgreen;
 }
 
 #donate-paragraph {
@@ -719,4 +707,35 @@ h3,h4,h5 {
 #closing-statement, #closing-statement-two {
   text-align: center;
   margin-bottom: 30px;
+}
+
+
+
+/* footer stuff */
+
+.copyright-footer {
+  color: black;
+}
+
+.email-footer {
+  color: darkgreen;
+}
+
+.number-footer {
+  color: black;
+}
+
+ul {
+  list-style-position: outside;
+}
+
+.list {
+  font-weight: bold;
+}
+
+.list-main {
+  font-weight: bold;
+  color: darkgreen;
+  margin-top: 30px;
+  font-size: 20px;
 }
