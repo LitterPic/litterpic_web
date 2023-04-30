@@ -648,6 +648,12 @@ h3,h4,h5 {
   padding-bottom: 50px;
 }
 
+.donate-main-text {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 20px;
+}
+
 .centered-logos img {
   max-width: 100%;
   height: auto;
@@ -662,15 +668,74 @@ h3,h4,h5 {
 }
 
 
-.donate-btn {
-  background-color: darkgreen;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  top: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  top: 1120px;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper{
+  position: relative;
+}
+
+.a-link {
+  display: block;
+  width: 250px;
   height: 50px;
-  margin: 0 auto;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #2ecc71;
+  transition: all .35s;
+}
+
+a:hover{
+  width: 200px;
+  border: 3px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+}
+
+a:hover + .icon{
+  border: 3px solid #2ecc71;
+  right: -25%;
 }
 
 .donate-icon {
