@@ -695,12 +695,12 @@ h3,h4,h5 {
   line-height: 50px;
   font-weight: bold;
   text-decoration: none;
-  background: #333;
+  background: darkgreen;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 3px solid #333;
+  border: 3px solid darkgreen;
   transition: all .35s;
 }
 
@@ -722,7 +722,7 @@ h3,h4,h5 {
   top: calc(50% - 15px);
   left: calc(50% - 15px);
   transform: rotate(-45deg);
-  fill: #2ecc71;
+  fill: darkgreen;
   transition: all .35s;
 }
 
