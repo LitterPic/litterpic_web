@@ -185,6 +185,38 @@ body {
   color: #26a69a;
 }
 
+.menu li:after,
+.menu li:before {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0px solid black;
+}
+
+.menu li:after {
+  width: 0%;
+  height: 80%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  transition: all 0.3s ease;
+}
+
+.menu li:before {
+  width: 10%;
+  height: 0%;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  transition: all 0.5s ease;
+}
+
+.menu li:hover::before {
+  height: 80%;
+}
+
+.menu li:hover::after {
+  width: 10%;
+}
+
 
 
 /* Donate Button */
@@ -726,14 +758,14 @@ h3,h4,h5 {
   transition: all .35s;
 }
 
-a:hover{
+.a-link:hover{
   width: 200px;
   border: 3px solid #ff9800;
   background: transparent;
   color: #ff9800;
 }
 
-a:hover + .icon{
+.a-link:hover + .icon{
   border: 3px solid #ff9800;
   right: -25%;
 }
