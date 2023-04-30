@@ -166,6 +166,11 @@ body {
   padding-top: 10px;
 }
 
+.navbar-nav .nav-link {
+  padding: 0;
+}
+
+
 #litter-icon {
   height: 45px;
   padding-bottom: 10px;
@@ -180,42 +185,32 @@ body {
   margin-right: 5px;
 }
 
-
-.social-icons {
-  color: #26a69a;
+.nav-link::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
 }
 
-.menu li:after,
-.menu li:before {
-  content: "";
-  position: absolute;
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link::before {
+  content: " ";
   display: block;
-  border: 0px solid black;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #ff9800;
+  z-index: -1;
+  transition: transform .3s ease;
 }
 
-.menu li:after {
-  width: 0%;
-  height: 80%;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  transition: all 0.3s ease;
+.nav-link {
+  position: relative;
+  padding: -30px;
 }
 
-.menu li:before {
-  width: 10%;
-  height: 0%;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  transition: all 0.5s ease;
-}
-
-.menu li:hover::before {
-  height: 80%;
-}
-
-.menu li:hover::after {
-  width: 10%;
-}
 
 
 
