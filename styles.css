@@ -147,10 +147,6 @@ body {
   z-index: 2;
 }
 
-.navbar-brand {
-  padding: 5px 10px;
-}
-
 .nav-item {
   margin-right: 15px;
 }
@@ -167,10 +163,12 @@ body {
 
 .nav-link i {
   margin-right: 5px;
+  padding-top: 10px;
 }
 
 #litter-icon {
   height: 45px;
+  padding-bottom: 10px;
 }
 
 .navbar-brand {
