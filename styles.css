@@ -222,6 +222,10 @@ body {
   height: calc(100vh - 70px);
 }
 
+#wrapper:hover {
+  background-color: #ff9800;
+}
+
 #earth-container {
   display: flex;
   justify-content: center;
@@ -727,8 +731,11 @@ h3,h4,h5 {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 3px solid darkgreen;
   transition: all .35s;
+}
+
+.a-link:hover {
+  background-color: #ff9800;
 }
 
 .icon{
@@ -743,28 +750,6 @@ h3,h4,h5 {
   transition: all .35s;
 }
 
-.icon svg{
-  width: 30px;
-  position: absolute;
-  top: calc(50% - 15px);
-  left: calc(50% - 15px);
-  transform: rotate(-45deg);
-  fill: darkgreen;
-  transition: all .35s;
-}
-
-.a-link:hover{
-  width: 200px;
-  border: 3px solid #ff9800;
-  background: transparent;
-  color: #ff9800;
-}
-
-.a-link:hover + .icon{
-  border: 3px solid #ff9800;
-  right: -25%;
-}
-
 .donate-icon {
   color: darkgreen;
 }
@@ -776,7 +761,7 @@ h3,h4,h5 {
 
 .donate-btn:hover {
   background-color: #AFD3E2;
-  color: darkgreen;
+  color: lightgreen;
 }
 
 #donate-paragraph {
