@@ -222,6 +222,10 @@ body {
   height: calc(100vh - 70px);
 }
 
+#wrapper:hover {
+  background-color: #ff9800;
+}
+
 #earth-container {
   display: flex;
   justify-content: center;
@@ -644,10 +648,6 @@ h3,h4,h5 {
   font-size: 50px;
 }
 
-
-
-
-
 #director-info {
   display: flex;
   justify-content: center;
@@ -659,6 +659,35 @@ h3,h4,h5 {
   margin-top: 50px;
   margin-bottom: 150px;
   text-align: center;
+}
+
+#privacy-link {
+  color: darkgreen;
+}
+
+#privacy-link {
+  text-decoration: none;
+  color: #18272F;
+  font-weight: 700;
+  position: relative;
+}
+
+#privacy-link::before {
+  content: '';
+  background-color: #ff9800;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 0px;
+  z-index: -1;
+  transition: all .3s ease-in-out;
+}
+
+
+#privacy-link:hover::before {
+  bottom: 0;
+  height: 100%;
 }
 
 
@@ -727,9 +756,31 @@ h3,h4,h5 {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 3px solid darkgreen;
-  transition: all .35s;
+  position: relative;
 }
+
+.a-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.a-link::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #ff9800;
+  transition: transform .3s ease;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.a-link:hover {
+  color: darkgreen;
+}
+
+
 
 .icon{
   width: 50px;
@@ -741,42 +792,6 @@ h3,h4,h5 {
   top: 0;
   z-index: -1;
   transition: all .35s;
-}
-
-.icon svg{
-  width: 30px;
-  position: absolute;
-  top: calc(50% - 15px);
-  left: calc(50% - 15px);
-  transform: rotate(-45deg);
-  fill: darkgreen;
-  transition: all .35s;
-}
-
-.a-link:hover{
-  width: 200px;
-  border: 3px solid #ff9800;
-  background: transparent;
-  color: #ff9800;
-}
-
-.a-link:hover + .icon{
-  border: 3px solid #ff9800;
-  right: -25%;
-}
-
-.donate-icon {
-  color: darkgreen;
-}
-
-.donate-icon-2 {
-  color: white;
-}
-
-
-.donate-btn:hover {
-  background-color: #AFD3E2;
-  color: darkgreen;
 }
 
 #donate-paragraph {
@@ -840,7 +855,7 @@ h3,h4,h5 {
   left: 0;
   bottom: 3px;
   width: 100%;
-  height: 4px;
+  height: 0px;
   z-index: -1;
   transition: all .3s ease-in-out;
 }
