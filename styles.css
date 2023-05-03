@@ -731,12 +731,31 @@ h3,h4,h5 {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all .35s;
+  position: relative;
 }
 
-.a-link:hover {
-  background-color: #ff9800;
+.a-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
+
+.a-link::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #ff9800;
+  transition: transform .3s ease;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.a-link:hover::after {
+  color: darkgreen;
+}
+
+
 
 .icon{
   width: 50px;
