@@ -230,10 +230,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   height: calc(100vh - 70px);
+  color: black;
 }
 
 #wrapper:hover {
-  background-color: #ff9800;
+  color: black;
+  
 }
 
 #earth-container {
@@ -732,23 +734,18 @@ h5 {
 }
 
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  top: 500px;
-  transform: translate(-50%, -50%);
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  width: fit-content; /* adjust this to your desired width */
 }
+
 
 .wrapper-2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  top: 1120px;
-  transform: translate(-50%, -50%);
-}
-
-.link_wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .a-link {
@@ -769,6 +766,7 @@ h5 {
 .a-link:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
+  color:black;
 }
 
 .a-link::before {
@@ -784,10 +782,13 @@ h5 {
   transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: bottom right;
+  color: black;
+  z-index: -2;
 }
 
 .a-link:hover {
-  color: darkgreen;
+  color: black;
+  z-index: 1;
 }
 
 .icon {
