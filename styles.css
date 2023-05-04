@@ -230,10 +230,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   height: calc(100vh - 70px);
+  color: black;
 }
 
 #wrapper:hover {
-  background-color: #ff9800;
+  color: black;
+  
 }
 
 #earth-container {
@@ -739,9 +741,6 @@ h5 {
   width: fit-content; /* adjust this to your desired width */
 }
 
-.link_wrapper {
-  display: inline-block;
-}
 
 .wrapper-2 {
   position: relative;
@@ -767,6 +766,7 @@ h5 {
 .a-link:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
+  color:black;
 }
 
 .a-link::before {
@@ -782,10 +782,13 @@ h5 {
   transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: bottom right;
+  color: black;
+  z-index: -2;
 }
 
 .a-link:hover {
-  color: darkgreen;
+  color: black;
+  z-index: 1;
 }
 
 .icon {
