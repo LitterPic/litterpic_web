@@ -732,23 +732,21 @@ h5 {
 }
 
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  top: 500px;
-  transform: translate(-50%, -50%);
-}
-
-.wrapper-2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  top: 1120px;
-  transform: translate(-50%, -50%);
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  width: fit-content; /* adjust this to your desired width */
 }
 
 .link_wrapper {
+  display: inline-block;
+}
+
+.wrapper-2 {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .a-link {
