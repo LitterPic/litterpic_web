@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
+  padding-top: 50px;
 }
 
 /* Home Page */
@@ -235,7 +236,6 @@ body {
 
 #wrapper:hover {
   color: black;
-  
 }
 
 #earth-container {
@@ -741,7 +741,6 @@ h5 {
   width: fit-content; /* adjust this to your desired width */
 }
 
-
 .wrapper-2 {
   position: relative;
   display: flex;
@@ -766,7 +765,7 @@ h5 {
 .a-link:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
-  color:black;
+  color: black;
 }
 
 .a-link::before {
