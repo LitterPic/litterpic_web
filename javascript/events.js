@@ -18,19 +18,48 @@ const query = eventsRef.where("date", ">=", new Date());
 // Get a reference to the events list element
 const eventsList = document.getElementById("event-list");
 
-query.get().then((snapshot) => {
-  snapshot.forEach((doc) => {
-    const event = doc.data();
-    const li = document.createElement("li");
-    const startTime = event.eventStartTime.toDate();
-    const startFormatted = startTime.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
+// Check if events are in local storage
+if (localStorage.getItem("events")) {
+  const events = JSON.parse(localStorage.getItem("events"));
+  renderEvents(events);
+} else {
+  // Retrieve events from Firebase and store in local storage
+  query
+    .get()
+    .then((snapshot) => {
+      const events = [];
+      snapshot.forEach((doc) => {
+        events.push(doc.data());
+      });
+      localStorage.setItem("events", JSON.stringify(events));
+      renderEvents(events);
+    })
+    .catch((error) => {
+      console.error(error);
     });
-    li.textContent = `${event.description}: ${event.date
-      .toDate()
-      .toLocaleDateString()} - ${event.location} - Starts at ${startFormatted}`;
+}
+
+function renderEvents(events) {
+  eventsList.innerHTML = "";
+  events.forEach((event) => {
+    const li = document.createElement("li");
+    let dateFormatted = "";
+    if (event.date && typeof event.date.toDate === "function") {
+      dateFormatted = event.date.toDate().toLocaleDateString();
+    }
+    let startFormatted = "";
+    if (
+      event.eventStartTime &&
+      typeof event.eventStartTime.toDate === "function"
+    ) {
+      const startTime = event.eventStartTime.toDate();
+      startFormatted = startTime.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      });
+    }
+    li.textContent = `${event.description}: ${dateFormatted} - ${event.location} - Starts at ${startFormatted}`;
     eventsList.appendChild(li);
   });
-});
+}
