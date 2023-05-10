@@ -1,7 +1,20 @@
+// Initialize Firebase
+firebase.initializeApp({
+  apiKey: "AIzaSyA-s9rMh2K9dDqJAERWj6EyQ4Qj3hlIRHg",
+  authDomain: "litterpic-fa0bb.firebaseapp.com",
+  projectId: "litterpic-fa0bb",
+  storageBucket: "litterpic-fa0bb.appspot.com",
+  messagingSenderId: "445985363997",
+  appId: "1:445985363997:web:3588d2d945f426835e4ef4",
+  measurementId: "G-64THCF0R4S",
+});
+
+// Get a reference to the Firestore database
 const db = firebase.firestore();
 
 function fetchPosts() {
   const postsColumn = document.getElementById("posts-column");
+  const posts = [];
 
   db.collection("userPosts")
     .get()
@@ -9,14 +22,22 @@ function fetchPosts() {
       querySnapshot.forEach((doc) => {
         const postData = doc.data();
 
+        const post = {
+          id: doc.id,
+          description: postData.postDescription,
+          photos: postData.postPhotos,
+        };
+
+        posts.push(post);
+
         const postElement = document.createElement("div");
         postElement.className = "post mb-4";
 
         const postDescriptionElement = document.createElement("h5");
-        postDescriptionElement.innerText = postData.postDescription;
+        postDescriptionElement.innerText = post.description;
         postElement.appendChild(postDescriptionElement);
 
-        const carouselId = `carousel-${doc.id}`;
+        const carouselId = `carousel-${post.id}`;
 
         const carouselElement = document.createElement("div");
         carouselElement.className = "carousel slide";
@@ -26,7 +47,7 @@ function fetchPosts() {
         const carouselInnerElement = document.createElement("div");
         carouselInnerElement.className = "carousel-inner";
 
-        postData.postPhotos.forEach((photo, index) => {
+        post.photos.forEach((photo, index) => {
           const carouselItemElement = document.createElement("div");
           carouselItemElement.className = `carousel-item${
             index === 0 ? " active" : ""
@@ -42,7 +63,7 @@ function fetchPosts() {
 
         carouselElement.appendChild(carouselInnerElement);
 
-        if (postData.postPhotos.length > 1) {
+        if (post.photos.length > 1) {
           const carouselPrevElement = document.createElement("a");
           carouselPrevElement.className = "carousel-control-prev";
           carouselPrevElement.href = `#${carouselId}`;

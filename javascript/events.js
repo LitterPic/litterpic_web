@@ -9,57 +9,67 @@ firebase.initializeApp({
   measurementId: "G-64THCF0R4S",
 });
 
-// Get a reference to the events collection
-const eventsRef = firebase.firestore().collection("events");
+class EventManager {
+  constructor() {
+    // Get a reference to the events collection
+    this.eventsRef = firebase.firestore().collection("events");
+    // Get a reference to the events list element
+    this.eventsList = document.getElementById("event-list");
+  }
 
-// Query for events that occur after the current date
-const query = eventsRef.where("date", ">=", new Date());
-
-// Get a reference to the events list element
-const eventsList = document.getElementById("event-list");
-
-// Check if events are in local storage
-if (localStorage.getItem("events")) {
-  const events = JSON.parse(localStorage.getItem("events"));
-  renderEvents(events);
-} else {
-  // Retrieve events from Firebase and store in local storage
-  query
-    .get()
-    .then((snapshot) => {
-      const events = [];
-      snapshot.forEach((doc) => {
-        events.push(doc.data());
+  // Query for events that occur after the current date
+  getUpcomingEvents() {
+    const query = this.eventsRef.where("date", ">=", new Date());
+    // Retrieve events from Firebase and store in local storage
+    query
+      .get()
+      .then((snapshot) => {
+        const events = snapshot.docs.map((doc) => doc.data());
+        localStorage.setItem("events", JSON.stringify(events));
+        this.renderEvents(events);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      localStorage.setItem("events", JSON.stringify(events));
-      renderEvents(events);
-    })
-    .catch((error) => {
-      console.error(error);
+  }
+
+  // Check if events are in local storage
+  getLocalEvents() {
+    if (localStorage.getItem("events")) {
+      const events = JSON.parse(localStorage.getItem("events"));
+      this.renderEvents(events);
+    } else {
+      this.getUpcomingEvents();
+    }
+  }
+
+  renderEvents(events) {
+    this.eventsList.innerHTML = "";
+    events.forEach((event) => {
+      const li = document.createElement("li");
+      let dateFormatted = "";
+      if (event.date && typeof event.date.toDate === "function") {
+        dateFormatted = event.date.toDate().toLocaleDateString();
+      }
+
+      let timeString = "";
+      const timestamp = new firebase.firestore.Timestamp(
+        event.eventStartTime.seconds,
+        event.eventStartTime.nanoseconds
+      );
+      const date = timestamp.toDate();
+      const hours = date.getHours();
+      const minutes = date.getMinutes().toString().padStart(2, "0");
+      const amPm = hours >= 12 ? "PM" : "AM";
+      const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+      timeString = `${formattedHours}:${minutes} ${amPm}`;
+
+      li.textContent = `${event.description}: ${dateFormatted} - ${event.location} - Starts at ${timeString}`;
+      this.eventsList.appendChild(li);
     });
+  }
 }
 
-function renderEvents(events) {
-  eventsList.innerHTML = "";
-  events.forEach((event) => {
-    const li = document.createElement("li");
-    let dateFormatted = "";
-    if (event.date && typeof event.date.toDate === "function") {
-      dateFormatted = event.date.toDate().toLocaleDateString();
-    }
-    let startFormatted = "";
-    if (
-      event.eventStartTime &&
-      typeof event.eventStartTime.toDate === "function"
-    ) {
-      const startTime = event.eventStartTime.toDate();
-      startFormatted = startTime.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-      });
-    }
-    li.textContent = `${event.description}: ${dateFormatted} - ${event.location} - Starts at ${startFormatted}`;
-    eventsList.appendChild(li);
-  });
-}
+// Create an instance of EventManager and call getLocalEvents() to start the app
+const eventManager = new EventManager();
+eventManager.getLocalEvents();

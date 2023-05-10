@@ -23,11 +23,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
-    />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
       rel="stylesheet"
@@ -38,7 +33,7 @@
     />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/javascript/index.js" defer></script>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
 
   <body>
@@ -60,37 +55,29 @@
     </div>
 
     <div id="timeline" class="shadow p-3 mb-5 bg-body-tertiary rounded">
-      <div>
-        <img
-          id="user-img-2"
-          src="/assets/photos/profile.png"
-          alt="user image"
-        />
-        <h6 id="username">Username</h6>
-        <h6 id="location">New York, NY</h6>
-        <p id="user-post">Post text should go here</p>
-      </div>
-      <div id="img-post"></div>
-      <div id="interact">
-        <i
-          id="heart-btn"
-          class="interact-btns fa-regular fa-heart fa-2x"
-          onclick="toggleHeart(this)"
-        ></i>
-        <i class="interact-btns fa-regular fa-comments fa-2x"></i>
-        <i class="interact-count">20 Likes</i>
-        <i class="interact-count">5 Comments</i>
-      </div>
+      <div id="posts-column"></div>
     </div>
+
+    <!-- <div id="interact">
+      <i
+        id="heart-btn"
+        class="interact-btns fa-regular fa-heart fa-2x"
+        onclick="toggleHeart(this)"
+      ></i>
+      <i class="interact-btns fa-regular fa-comments fa-2x"></i>
+      <i class="interact-count">20 Likes</i>
+      <i class="interact-count">5 Comments</i>
+    </div> -->
+
+    <div id="footer"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="/javascript/firebase.js"></script>
-    <script src="/javascript/app.js"></script>
+    <script type="module" src="/javascript/firebase.js"></script>
+    <script type="module" src="/javascript/app.js"></script>
     <script src="/javascript/include-navbar.js"></script>
+    <script src="/javascript/include-footer.js"></script>
   </body>
-  <div id="footer"></div>
-  <script src="/javascript/include-footer.js"></script>
 </html>
