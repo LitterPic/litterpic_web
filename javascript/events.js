@@ -1,5 +1,5 @@
-// Initialize Firebase
-firebase.initializeApp({
+// Initialize Firebase App
+const firebaseConfig = {
   apiKey: "AIzaSyA-s9rMh2K9dDqJAERWj6EyQ4Qj3hlIRHg",
   authDomain: "litterpic-fa0bb.firebaseapp.com",
   projectId: "litterpic-fa0bb",
@@ -7,7 +7,8 @@ firebase.initializeApp({
   messagingSenderId: "445985363997",
   appId: "1:445985363997:web:3588d2d945f426835e4ef4",
   measurementId: "G-64THCF0R4S",
-});
+};
+firebase.initializeApp(firebaseConfig);
 
 class EventManager {
   constructor() {
@@ -20,17 +21,21 @@ class EventManager {
   // Query for events that occur after the current date
   getUpcomingEvents() {
     const query = this.eventsRef.where("date", ">=", new Date());
-    // Retrieve events from Firebase and store in local storage
-    query
-      .get()
-      .then((snapshot) => {
-        const events = snapshot.docs.map((doc) => doc.data());
+    // Listen to changes in the collection in real-time
+    query.onSnapshot(
+      (snapshot) => {
+        const events = snapshot.docs.map((doc) => {
+          const data = doc.data();
+          data.eventId = doc.id;
+          return data;
+        });
         localStorage.setItem("events", JSON.stringify(events));
         this.renderEvents(events);
-      })
-      .catch((error) => {
+      },
+      (error) => {
         console.error(error);
-      });
+      }
+    );
   }
 
   // Check if events are in local storage
@@ -72,4 +77,21 @@ class EventManager {
 
 // Create an instance of EventManager and call getLocalEvents() to start the app
 const eventManager = new EventManager();
+
+// Listen for real-time updates to the events in the backend
+eventManager.eventsRef.onSnapshot(
+  (snapshot) => {
+    const events = snapshot.docs.map((doc) => {
+      const data = doc.data();
+      data.eventId = doc.id;
+      return data;
+    });
+    localStorage.setItem("events", JSON.stringify(events));
+    eventManager.renderEvents(events);
+  },
+  (error) => {
+    console.error(error);
+  }
+);
+
 eventManager.getLocalEvents();

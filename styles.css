@@ -11,11 +11,20 @@ body {
   height: 250px;
 }
 
+.carousel-inner {
+  margin: 50px;
+}
+
 .post-image {
   display: block;
   max-width: 30%;
   height: auto;
   margin-bottom: 20px;
+}
+
+.post mb-4 {
+  margin: 30px;
+  margin-top: 80px;
 }
 
 /* added this because it wouldn't let me commit */

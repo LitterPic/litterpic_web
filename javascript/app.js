@@ -17,6 +17,7 @@ function fetchPosts() {
   const posts = [];
 
   db.collection("userPosts")
+    .orderBy("timePosted", "desc")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -42,7 +43,7 @@ function fetchPosts() {
         const carouselElement = document.createElement("div");
         carouselElement.className = "carousel slide";
         carouselElement.id = carouselId;
-        carouselElement.setAttribute("data-ride", "carousel");
+        carouselElement.setAttribute("data-bs-ride", "carousel");
 
         const carouselInnerElement = document.createElement("div");
         carouselInnerElement.className = "carousel-inner";
@@ -68,7 +69,7 @@ function fetchPosts() {
           carouselPrevElement.className = "carousel-control-prev";
           carouselPrevElement.href = `#${carouselId}`;
           carouselPrevElement.setAttribute("role", "button");
-          carouselPrevElement.setAttribute("data-slide", "prev");
+          carouselPrevElement.setAttribute("data-bs-slide", "prev");
 
           const carouselPrevIcon = document.createElement("span");
           carouselPrevIcon.className = "carousel-control-prev-icon";
@@ -76,7 +77,7 @@ function fetchPosts() {
           carouselPrevElement.appendChild(carouselPrevIcon);
 
           const carouselPrevSrOnly = document.createElement("span");
-          carouselPrevSrOnly.className = "sr-only";
+          carouselPrevSrOnly.className = "visually-hidden";
           carouselPrevSrOnly.innerText = "Previous";
           carouselPrevElement.appendChild(carouselPrevSrOnly);
 
@@ -84,10 +85,11 @@ function fetchPosts() {
           carouselNextElement.className = "carousel-control-next";
           carouselNextElement.href = `#${carouselId}`;
           carouselNextElement.setAttribute("role", "button");
-          carouselNextElement.setAttribute("data-slide", "next");
+          carouselNextElement.setAttribute("data-bs-slide", "next");
 
           const carouselNextIcon = document.createElement("span");
           carouselNextIcon.className = "carousel-control-next-icon";
+          carouselNextIcon.setAttribute("aria-hidden", "true");
           carouselNextIcon.setAttribute("aria-hidden", "true");
           carouselNextElement.appendChild(carouselNextIcon);
 
@@ -107,3 +109,11 @@ function fetchPosts() {
 }
 
 fetchPosts();
+
+// Activate the carousel after all posts have been loaded
+const carouselElements = document.querySelectorAll(".carousel");
+carouselElements.forEach((carousel) => {
+  new bootstrap.Carousel(carousel, {
+    interval: false,
+  });
+});
