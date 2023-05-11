@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Posts</title>
 
+    <!-- Add the following code to the head of your HTML file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
@@ -39,26 +43,11 @@
   <body>
     <div id="navbar"></div>
 
-    <div id="news-feed-post" class="shadow p-3 mb-5 bg-body-tertiary rounded">
-      <div class="img-status">
-        <img id="user-img" src="/assets/photos/profile.png" alt="user image" />
-        <div id="stat-icon">
-          <textarea
-            id="status"
-            placeholder="Write Something. :D"
-            spellcheck="false"
-            required
-          ></textarea>
-          <i class="photo-icon fa-regular fa-image fa-2x"></i>
-        </div>
-      </div>
-    </div>
-
     <div id="timeline" class="shadow p-3 mb-5 bg-body-tertiary rounded">
       <div id="posts-column"></div>
     </div>
 
-    <!-- <div id="interact">
+    <div id="interact">
       <i
         id="heart-btn"
         class="interact-btns fa-regular fa-heart fa-2x"
@@ -67,7 +56,7 @@
       <i class="interact-btns fa-regular fa-comments fa-2x"></i>
       <i class="interact-count">20 Likes</i>
       <i class="interact-count">5 Comments</i>
-    </div> -->
+    </div>
 
     <div id="footer"></div>
 
