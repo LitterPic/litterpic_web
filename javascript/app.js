@@ -13,13 +13,16 @@ firebase.initializeApp({
 const db = firebase.firestore();
 
 function fetchPosts() {
-  const postsColumn = document.getElementById("posts-column");
-  const posts = [];
+  const postsColumn1 = document.getElementById("posts-column1");
+  const postsColumn2 = document.getElementById("posts-column2");
 
   db.collection("userPosts")
     .orderBy("timePosted", "desc")
     .get()
     .then((querySnapshot) => {
+      let column = postsColumn1; // Start with column 1
+      let index = 0; // Track the index
+
       querySnapshot.forEach((doc) => {
         const postData = doc.data();
 
@@ -29,14 +32,8 @@ function fetchPosts() {
           photos: postData.postPhotos,
         };
 
-        posts.push(post);
-
         const postElement = document.createElement("div");
-        postElement.className = "post mb-4";
-
-        const postDescriptionElement = document.createElement("h5");
-        postDescriptionElement.innerText = post.description;
-        postElement.appendChild(postDescriptionElement);
+        postElement.className = "post";
 
         const carouselId = `carousel-${post.id}`;
 
@@ -55,7 +52,7 @@ function fetchPosts() {
           }`;
 
           const imgElement = document.createElement("img");
-          imgElement.className = "d-block w-100";
+          imgElement.className = "image";
           imgElement.src = photo;
           carouselItemElement.appendChild(imgElement);
 
@@ -90,7 +87,6 @@ function fetchPosts() {
           const carouselNextIcon = document.createElement("span");
           carouselNextIcon.className = "carousel-control-next-icon";
           carouselNextIcon.setAttribute("aria-hidden", "true");
-          carouselNextIcon.setAttribute("aria-hidden", "true");
           carouselNextElement.appendChild(carouselNextIcon);
 
           const carouselNextSrOnly = document.createElement("span");
@@ -103,7 +99,22 @@ function fetchPosts() {
         }
 
         postElement.appendChild(carouselElement);
-        postsColumn.appendChild(postElement);
+
+        const postDescriptionElement = document.createElement("p");
+        postDescriptionElement.className = "post-description";
+        postDescriptionElement.innerText = post.description;
+        postElement.appendChild(postDescriptionElement);
+
+        // Add post to the respective column
+        column.appendChild(postElement);
+
+        // Apply column alternation and update index
+        if (index % 2 === 0) {
+          column = postsColumn2;
+        } else {
+          column = postsColumn1;
+        }
+        index++;
       });
     });
 }
