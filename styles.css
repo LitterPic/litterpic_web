@@ -2,29 +2,72 @@ body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   padding-top: 70px;
+  display: flexbox;
 }
 
 /* Home Page */
 
+.column {
+  float: calc();
+  width: 50%;
+  padding: 40px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.post {
+  align-content: center;
+  max-width: 400px;
+  padding-bottom: 30px;
+  object-fit: cover;
+}
+
+.post-description {
+  justify-content: center;
+  display: flex;
+}
+
+#timeline {
+  width: auto;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .carousel {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-inner {
-  margin: 50px;
+.image {
+  object-fit: cover;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
 }
 
-.post-image {
-  display: block;
-  max-width: 30%;
-  height: auto;
-  margin-bottom: 20px;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #015e41;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.post mb-4 {
-  margin: 30px;
-  margin-top: 80px;
+.posts-column1 {
+  width: 45%;
+  margin-right: 200px;
+}
+
+.posts-column2 {
+  width: 45%;
+  margin-left: 200px;
 }
 
 /* added this because it wouldn't let me commit */
